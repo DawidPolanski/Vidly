@@ -18,7 +18,7 @@
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Customers", "MembeshipTypeId", c => c.Byte(nullable: false));
+            AddColumn("dbo.Customers", "MembeshipType_Id", c => c.Byte(nullable: false));
             AddColumn("dbo.Customers", "MembershipType_Id", c => c.Byte());
             CreateIndex("dbo.Customers", "MembershipType_Id");
             AddForeignKey("dbo.Customers", "MembershipType_Id", "dbo.MembershipTypes", "Id");

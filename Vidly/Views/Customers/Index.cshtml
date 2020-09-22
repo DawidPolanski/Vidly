@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Vidly.Models.Customer>
+
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h2>Customers</h2>
 @if (!Model.Any())
 {
@@ -14,15 +16,18 @@ else
         <thead>
             <tr>
                 <th>Customer</th>
+                <th>Membership Type</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var customer in Model)
             {
                 <tr>
-                    <td class="customercolor">@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id } , null)</td>
+                    <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+                    <td>@customer.MembershipType.Name</td>
                 </tr>
             }
+            
         </tbody>
     </table>
 }
