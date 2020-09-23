@@ -8,7 +8,7 @@ namespace Vidly
     {
         public void Configuration(IAppBuilder app)
         {
-            Configuration(app);
+            ConfigureAuth(app);
         }
     }
 }
